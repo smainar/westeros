@@ -1,3 +1,5 @@
-<% form_tag do %>
-  <%=  %>
+<%= form_tag("/search", method: :get)do %>
+  <%= select_tag("house", options_for_select(["Greyjoy", "Targaryen", "Lannister", "Stark"])) %>
+
+  <%= submit_tag "Get Members" %>
 <% end %>
