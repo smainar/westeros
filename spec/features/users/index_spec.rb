@@ -13,11 +13,12 @@ RSpec.describe "As a user", type: :feature do
   describe "Index Page - Westeros House Members" do
     it "I should see a list of the 7 members of House Greyjoy" do
       visit "/"
+      # save_and_open_page
 
-      page.select "Greyjoy", from: "House"
+      page.select "Greyjoy", from: "house"
       click_on "Get Members"
 
-      expect(current_path).to eq("/search?house=greyjoy")
+      expect(current_path).to eq("/search")
       expect(page).to have_content("7 Members")
       expect(page).to have_css(".house-members-list", count: 7)
 
